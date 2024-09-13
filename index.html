@@ -37,7 +37,12 @@
     }
   </style>
   <script>
-    console.log("Referring website:", document.referrer);
+    const allowedReferrer = 'https://lazyloop.myr.id/';
+    const redirectUrl = 'https://lazyloop.myr.id/pl/lazyloop-uuid-access';
+
+    if (document.referrer !== allowedReferrer) {
+      window.location.href = redirectUrl;
+    }
   </script>
 </head>
 <body>
